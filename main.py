@@ -11,7 +11,7 @@ def run(server_class=HTTPServer, handler_class=SimpleRESTServer, port=8000, use_
     def handler(*args, **kwargs):
         handler_class(desk_manager, *args, **kwargs)
 
-    server_address = ("localhost", port)
+    server_address = ("0.0.0.0", port)
     httpd = server_class(server_address, handler)
 
     if use_https:
